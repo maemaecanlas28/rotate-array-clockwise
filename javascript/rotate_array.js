@@ -1,5 +1,20 @@
 function rotateArray(arr, k) {
-  // type your code here
+  // newArray is empty array; arrIndex is the index of original array and newIndex is index of the new array.
+  const newArray = [];
+  let arrIndex = 0;
+  // % returns the remainder of quotient
+  let newIndex = k % arr.length
+
+  while (arrIndex < arr.length) {
+    newArray[newIndex] = arr[arrIndex];
+    arrIndex++;
+    newIndex++;
+    // reset the newIndex back to 0 when the length of the array is less than the value of newIndex.
+    if (newIndex >= arr.length) {
+      newIndex = 0;
+    }
+  }
+  return newArray
 }
 
 if (require.main === module) {
